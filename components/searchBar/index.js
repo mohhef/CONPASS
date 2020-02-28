@@ -22,6 +22,9 @@ export default class searchBar extends Component {
     };
   }
 
+  // Function: When entering text searchbar, captures all the possible predictions from google's api
+  // Parameter: Text input from search bar
+
   async onChangeDestination(destination) {
     this.setState({ destination });
     const key = 'AIzaSyCqNODizSqMIWbKbO8Iq3VWdBcK846n_3w';
@@ -36,6 +39,9 @@ export default class searchBar extends Component {
       console.error(err);
     }
   }
+
+  // Function: gets the latitude and longitude of a chosen prediction
+  // Parameter: place_id of the chosen prediction
 
   async getLatLong(prediction) {
     // eslint-disable-next-line react/no-unused-state
@@ -66,6 +72,7 @@ export default class searchBar extends Component {
 
 
   render() {
+    // Predictions mapped and formmated from the current state predictions
     const predictions = this.state.predictions.map((prediction) => {
       return (
         <View key={prediction.id} style={styles.view}>
@@ -86,6 +93,8 @@ export default class searchBar extends Component {
     });
 
     return (
+
+      // Search bar element
       <View style={styles.container}>
         <View>
           <SearchBar
@@ -98,6 +107,7 @@ export default class searchBar extends Component {
           />
         </View>
         {
+          // Show predictions if there is a valid prediction from the current input
           this.state.showPredictions
             ? predictions : null
         }

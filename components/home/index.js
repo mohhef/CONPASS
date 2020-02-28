@@ -9,6 +9,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      // Initial region state for the App onload
       region: {
         latitude: 45.492409,
         longitude: -73.582153,
@@ -17,6 +18,9 @@ export default class Home extends Component {
       },
     };
   }
+
+  // Function : updates the currently set region to a new region
+  // parameter : a region object to be set to
 
   updateRegion = (newRegion) => {
     this.setState({

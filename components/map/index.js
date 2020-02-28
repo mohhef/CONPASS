@@ -15,18 +15,20 @@ export default class TheMap extends Component {
     };
   }
 
-  componentDidMount() {
-    const { description } = this.props.updatedRegion;
-    this.setState({ region: description });
-  }
+  // componentDidMount() {
+  //   const { description } = this.props.updatedRegion;
+  //   this.setState({ region: description });
+  // }
 
   render() {
     return (
+      // Map view of the application, google maps as a provider
       <MapView
         provider={PROVIDER_GOOGLE}
         region={this.props.updatedRegion}
         style={styles.mapStyle}
       >
+        {/* Mapping polygons to the MapView*/}
         {buildings.map((building) => {
           return (
             building.polygons.map((polygon) => {
