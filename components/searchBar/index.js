@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React, { Component } from 'react';
 import {
   View, Keyboard, TouchableOpacity, Text, TouchableHighlight,
@@ -104,7 +105,8 @@ export default class searchBar extends Component {
             lightTheme
             placeholder={placeholder}
             onChangeText={(destination) => {
-              destination.length === 0 ? this.props.changeVisibilityTo(true) : this.props.changeVisibilityTo(false);
+              destination.length === 0
+                ? this.props.changeVisibilityTo(true) : this.props.changeVisibilityTo(false);
               return this.onChangeDestination(destination);
             }}
             value={this.state.destination}

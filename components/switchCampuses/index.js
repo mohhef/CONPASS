@@ -1,35 +1,13 @@
-import React, { Component } from 'react';
+/* eslint-disable no-useless-constructor */
+import React from 'react';
 import { View } from 'react-native';
 import { Button } from 'react-native-elements';
+import LocateCampus from './LocateCampus';
 import styles from './styles';
 
-export default class SwitchCampuses extends Component {
+export default class SwitchCampuses extends LocateCampus {
   constructor(props) {
     super(props);
-    this.state = {
-      region: {
-        latitude: 0,
-        longitude: 0,
-      },
-    };
-  }
-
-  setLoyola() {
-    this.setState({
-      region: {
-        latitude: 45.458025,
-        longitude: -73.640192,
-      }
-    }, () => { this.props.updateRegion(this.state.region); });
-  }
-
-  setSGW() {
-    this.setState({
-      region: {
-        latitude: 45.495598,
-        longitude: -73.577850,
-      }
-    }, () => { this.props.updateRegion(this.state.region); });
   }
 
   render() {
@@ -39,14 +17,14 @@ export default class SwitchCampuses extends Component {
           <View style={styles.btn}>
             <Button
               title="Loyola"
-              onPress={() => { this.setLoyola(); }}
+              onPress={() => { super.setCampusTemplate(-73.640192, 45.458025); }}
             />
           </View>
 
           <View style={styles.btn}>
             <Button
               title="SGW"
-              onPress={() => { this.setSGW(); }}
+              onPress={() => { super.setCampusTemplate(-73.577850, 45.495598); }}
             />
           </View>
         </View>
