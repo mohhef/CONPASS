@@ -139,7 +139,7 @@ export default class searchBar extends Component {
 
 const Icon = (props) => {
   return (
-    <TouchableHighlight onPress={() => { return props.navigation.navigate('Menu'); }}>
+    <TouchableHighlight testID="burger" onPress={() => { return props.navigation.navigate('Menu'); }}>
       <Image style={styles.burger} source={burger} />
     </TouchableHighlight>
   );

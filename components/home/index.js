@@ -63,17 +63,24 @@ class Home extends Component {
           updatedRegion={this.state.region}
           updatedCoordinates={this.state.coordinates}
           encryptedLine={this.state.encryptedLine}
+          testID="map"
         />
         <SearchBar
           navigation={this.props.navigation}
           updateRegion={this.updateRegion}
           changeVisibilityTo={this.changeVisibilityTo}
+          testID="searchBar"
         />
-        <SwitchCampuses updateRegion={this.updateRegion} visiblityState={this.state.isVisible} />
-        <WithinBuilding />
+        <SwitchCampuses
+          updateRegion={this.updateRegion}
+          visiblityState={this.state.isVisible}
+          testID="switchCampuses"
+        />
+        <WithinBuilding testID="withinBuilding" />
         <Shuttle
           coordinateCallback={this.updateCoordinates}
           getPolylinePoint={this.getPolylinePoint}
+          testID="shuttle"
         />
       </View>
     );

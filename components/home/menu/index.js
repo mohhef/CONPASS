@@ -8,7 +8,7 @@ import conpass from './conpass.png';
 class Menu extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.container} testID="menu">
         <Image style={styles.logo} source={conpass} />
         <View style={styles.options}>
           <Text style={styles.option}>

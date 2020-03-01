@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const { reloadApp } = require('detox-expo-helpers');
 
 describe('Example', () => {
@@ -5,17 +6,28 @@ describe('Example', () => {
     await reloadApp();
   });
 
-  it('should have welcome screen', async () => {
-    await expect(element(by.id('welcome'))).toBeVisible();
+  it('should have map', async () => {
+    await expect(element(by.id('map'))).toBeVisible();
   });
 
-  it('should show hello screen after tap', async () => {
-    await element(by.id('hello_button')).tap();
-    await expect(element(by.text('Hello!!!'))).toBeVisible();
+  it('should have searchBar', async () => {
+    await expect(element(by.id('searchBar'))).toBeVisible();
   });
 
-  it('should show world screen after tap', async () => {
-    await element(by.id('world_button')).tap();
-    await expect(element(by.text('World!!!'))).toBeVisible();
+  it('should have campus toggle', async () => {
+    await expect(element(by.id('switchCampuses'))).toBeVisible();
+  });
+
+  it('should have campus current building', async () => {
+    await expect(element(by.id('withinBuilding'))).toBeVisible();
+  });
+
+  it('should have shuttle service', async () => {
+    await expect(element(by.id('shuttle'))).toBeVisible();
+  });
+
+  it('should show menu after selecting burger', async () => {
+    await element(by.id('burger')).tap();
+    await expect(element(by.text('menu'))).toBeVisible();
   });
 });
