@@ -6,6 +6,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "e2e": "detox test --configuration ios.sim",
     "eject": "expo eject",
     "lint": "eslint *.js **/*.js",
     "lint:fix": "eslint *.js **/*.js --fix"
@@ -48,7 +49,21 @@
     "@babel/core": "^7.0.0",
     "babel-eslint": "^10.0.3",
     "babel-preset-expo": "~8.0.0",
-    "eslint": "^6.8.0"
+    "detox": "^15.4.2",
+    "detox-expo-helpers": "^0.6.0",
+    "eslint": "^6.8.0",
+    "expo-detox-hook": "^1.0.10",
+    "jest": "^25.1.0"
   },
-  "private": true
+  "private": true,
+  "detox": {
+    "test-runner": "jest",
+    "configurations": {
+      "ios.sim": {
+        "binaryPath": "bin/Conpass.app",
+        "type": "ios.simulator",
+        "name": "iPhone X"
+      }
+    }
+  }
 }
