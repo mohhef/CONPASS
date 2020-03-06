@@ -2,9 +2,13 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   btn: {
-    width: '30%',
-    bottom: '97%',
+    width: '40%',
+    bottom: '90%',
     marginHorizontal: 5,
+    borderRadius: 20,
+    borderWidth: 5,
+    borderColor: '#2089DB',
+    opacity:0.66,
   },
   container: {
     flexDirection: 'row',
